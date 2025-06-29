@@ -21,6 +21,39 @@ Rust provides several integer types, both signed and unsigned:
 - `f32` (32-bit float)
 - `f64` (64-bit float, default for floats)
 
+## Booleans
+
+Booleans are either `true` or `false`:
+
+```rust
+let is_male = true;
+let is_above_18 = false;
+
+if is_male {
+    println!("You are a male");
+}
+
+if is_above_18 && is_male {
+    println!("You are a legal male.");
+}
+```
+
+## Strings
+
+There are two main string types:
+- `String` (growable, heap-allocated)
+- `&str` (string slice, usually used for string literals)
+
+Example:
+
+```rust
+let greetings = String::from("Hello, Rust!");
+println!("{}", greetings);
+
+let name = "world"; // &str
+println!("Hello, {}!", name);
+```
+
 ## Mutability
 
 Variables are immutable by default. To make a variable mutable, use the `mut` keyword:
