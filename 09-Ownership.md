@@ -1,14 +1,15 @@
 # Ownership in Rust
 
-## 1. What is Ownership?
-- Rust uses a system called **ownership** to manage memory safely and efficiently.
-- Each value in Rust has a variable that's its owner.
+Rust uses a system called **ownership** to manage memory safely and efficiently. Understanding ownership is key to writing safe and fast Rust code.
+
+## What is Ownership?
+- Each value in Rust has a variable that owns it.
 - There can only be one owner at a time.
 - When the owner goes out of scope, the value is dropped (memory is freed).
 
 ---
 
-## 2. Move
+## Move
 
 ```rust
 fn main() {
@@ -17,12 +18,12 @@ fn main() {
     // println!("{s1}"); // Error: s1 is no longer valid
 }
 ```
-- When assigning `s1` to `s2`, ownership moves to `s2`.
-- `s1` is no longer valid after the move.
+- Assigning a value to another variable moves ownership.
+- The original variable is no longer valid after the move.
 
 ---
 
-## 3. Clone
+## Clone
 
 ```rust
 fn main() {
@@ -36,7 +37,7 @@ fn main() {
 
 ---
 
-## 4. Copy
+## Copy
 
 ```rust
 fn main() {
@@ -50,7 +51,7 @@ fn main() {
 
 ---
 
-## 5. Drop
+## Drop
 
 ```rust
 fn main() {
@@ -63,7 +64,7 @@ fn main() {
 
 ---
 
-## 6. Ownership and Functions
+## Ownership and Functions
 
 ```rust
 fn main() {
@@ -88,7 +89,7 @@ fn makes_copy(some_integer: i32) {
 
 ---
 
-## 7. Returning Ownership
+## Returning Ownership
 
 ```rust
 fn main() {
@@ -109,7 +110,7 @@ fn takes_and_gives_back(a_string: String) -> String {
 
 ---
 
-## 8. What Types Implement Copy?
+## What Types Implement Copy?
 - All integer types (u32, i32, etc.)
 - bool
 - char
@@ -120,12 +121,15 @@ fn takes_and_gives_back(a_string: String) -> String {
 
 ---
 
-## 9. Summary
-
+## Summary
 - Assigning or passing ownership moves the value.
 - Use `.clone()` for deep copies.
 - Simple types are copied, not moved.
 - Ownership rules help prevent memory bugs and double frees.
+
+---
+
+For more, see the [Rust Book: Ownership](https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html)
 
 
 
