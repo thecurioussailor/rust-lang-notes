@@ -33,6 +33,7 @@ cargo run
 ## Useful Commands
 - `cargo check` – Check code quickly
 - `cargo build` – Build project
+- `cargo build --release` – Build optimized release version (creates target/release)
 - `cargo test` – Run tests
 - `cargo fmt` – Format code
 
