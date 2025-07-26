@@ -132,4 +132,47 @@ fn main() {
 
 ---
 
+## :: vs . - The Key Difference
+
+### :: (Double Colon) - Static Access
+- Used for types, traits, modules, and associated functions
+- Access items that don't require an instance
+- Examples:
+  ```rust
+  String::new()           // Associated function
+  std::io::stdin()        // Module path
+  Vec::<i32>::new()       // Type with generic parameter
+  std::collections::HashMap::new()  // Type with module path
+  ```
+
+### . (Dot) - Instance Access
+- Used for methods and fields on instances
+- Access items that require a specific instance
+- Examples:
+  ```rust
+  let s = String::new();
+  s.push_str("hello");    // Method on instance
+  s.len()                 // Method on instance
+  ```
+
+### Important Notes
+- **Type annotations** use `::`:
+  ```rust
+  let x: Vec<i32> = Vec::new();  // Type annotation with ::
+  ```
+- **Turbofish syntax** uses `::`:
+  ```rust
+  let x = Vec::<i32>::new();     // Explicit type parameter
+  ```
+- **Module paths** always use `::`:
+  ```rust
+  use std::collections::HashMap;  // Module import
+  ```
+- **Associated constants** use `::`:
+  ```rust
+  let max = i32::MAX;             // Associated constant
+  ```
+
+---
+
 For more, see the [Rust Book: Data Types](https://doc.rust-lang.org/book/ch03-02-data-types.html)
